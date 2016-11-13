@@ -3,7 +3,7 @@
  * @Time 13/11/2016
  * @Basic LinkedList测试
  */
-import org.junit.Before;
+import  org.junit.Before;
 import  org.junit.Test;
 public class LinkedListTest {
     LinkedList linkedList;
