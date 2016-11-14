@@ -93,7 +93,7 @@ public class LinkedList {
 
     /**
      * @param data
-     * @return 不存在则返回-1;存在则范湖第一次出现的位置;
+     * @return 不存在则返回-1;存在则返回第一次出现的位置;
      */
     public int indexOf(int data){
         Node current = this.first;
