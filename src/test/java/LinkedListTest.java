@@ -15,22 +15,33 @@ public class LinkedListTest {
 
     @Test
     public void  test(){
-        linkedList.add(1);
-        linkedList.add(2);
-        linkedList.add(3);
+        linkedList.addFromEnd(1);
+        linkedList.addFromEnd(2);
+        linkedList.addFromEnd(3);
+        linkedList.printAll();
         System.out.println(linkedList.indexOf(1));
         System.out.println(linkedList.indexOf(2));
         System.out.println(linkedList.indexOf(3));
         System.out.println(linkedList.indexOf(4));
         linkedList.printAll();
-        linkedList.delete();
+        linkedList.deleteFromEnd();
         linkedList.printAll();
-        linkedList.delete();
+        linkedList.deleteFromEnd();
         linkedList.printAll();
-        linkedList.delete();
+        linkedList.deleteFromEnd();
         linkedList.printAll();
-        linkedList.delete();
-        linkedList.add(544);
+        linkedList.deleteFromEnd();
+        linkedList.addFromEnd(7);
+        linkedList.printAll();
+        linkedList.addFromStart(6);
+        linkedList.printAll();
+        linkedList.addFromStart(5);
+        linkedList.printAll();
+        linkedList.deleteFromStart();
+        linkedList.printAll();
+        linkedList.deleteFromStart();
+        linkedList.printAll();
+        linkedList.deleteFromStart();
         linkedList.printAll();
     }
 }

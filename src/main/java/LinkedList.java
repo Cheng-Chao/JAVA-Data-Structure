@@ -21,8 +21,26 @@ public class LinkedList {
         this.first = null;
     }
 
-    //添加节点
-    public void add(int data){
+    /**
+     * 从头部添加节点
+     */
+    public void addFromStart(int data){
+        Node node = new Node(data);
+        if(this.first == null){
+            this.first = node;
+            this.first.next = null;
+        }
+        else{
+            Node first = this.first;
+            this.first = node;
+            this.first.next = first;
+        }
+    }
+
+    /**
+     * 从尾部添加节点
+     */
+    public void addFromEnd(int data){
         Node node = new Node(data);
         if(this.first == null){
             this.first = node;
@@ -40,24 +58,46 @@ public class LinkedList {
         }
     }
 
-    //删除节点
-    public void delete(){
+    /**
+     * 从头部删除节点
+     */
+    public void deleteFromStart(){
+        //第一个节点为空 无法删除
         if(this.first == null){
             System.out.println("Delete failed!!!The Linkedlist is empty");
-            return;
+        }
+        else{
+            Node second = this.first.next;
+            //第二个为空 直接删除头结点返回
+            if(second== null){
+                this.first = null;
+                return;
+            }
+        }
+        //第二个节点不为空，直接删除头结点
+        Node second = this.first.next;
+        this.first = second;
+    }
+
+    /**
+     * 从尾部删除节点
+     */
+    public void deleteFromEnd(){
+        //第一个节点为空 无法删除
+        if(this.first == null){
+            System.out.println("Delete failed!!!The Linkedlist is empty");
         }
         else {
-            Node current = this.first;
-            Node next = current.next;
-            //第二个为空 直接删除第一个节点返回
-            if(next == null){
+            Node second = this.first.next;
+            //第二个为空 直接删除头结点返回
+            if(second == null){
                 this.first = null;
                 return;
             }
             //第三个为空 直接删除第二个节点返回
             else {
-                next = next.next;
-                if(next == null){
+                Node third = second.next;
+                if(third == null){
                     this.first.next = null;
                     return;
                 }
@@ -65,18 +105,19 @@ public class LinkedList {
             //前三个都不为空
             Node lastPrevious = this.first.next;//第二个节点
             Node previous= this.first.next.next;//第三个节点
-            next = previous.next;//第四个节点
+            Node next = previous.next;//第四个节点
             while(next != null){
                 lastPrevious = previous;
                 previous = next;
                 next = next.next;
             }
             lastPrevious.next = null;
-            return;
         }
     }
 
-    //输出所有节点
+    /**
+     * 输出所有节点
+     */
     public void printAll(){
         if(this.first == null){
             System.out.println("The Linkedlist is empty.");
@@ -85,9 +126,11 @@ public class LinkedList {
         else{
             Node current = this.first;
             while(current != null){
-                System.out.println(current.data);
+                System.out.print(current.data);
+                System.out.print(" ");
                 current = current.next;
             }
+            System.out.print("\n");
         }
     }
 

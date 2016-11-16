@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
+        <!-- junit的maven依赖-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
