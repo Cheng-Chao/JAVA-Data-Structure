@@ -1,7 +1,7 @@
 /**
- * @Author chengchao
- * @Time 13/11/2016
- * @Basic LinkedList
+ * @author  chengchao
+ * @ 13/11/2016
+ * @ LinkedList
  */
 class Node{
     protected Node next;
@@ -152,5 +152,24 @@ public class LinkedList {
         }
         if(isFound) return index;
         else return  -1;
+    }
+
+    /**
+     * @get 返回当前index的值,找不到返回null
+     */
+    public int get(int i){
+        int index = 0;
+        Integer result = null;
+        Node current = this.first;
+        while(current != null){
+            if(index == i){
+                result = current.data;
+                break;
+            }
+            current = current.next;
+            index += 1;
+        }
+        //返回null 遗留问题...
+        return result == null? Integer.MIN_VALUE : result;
     }
 }

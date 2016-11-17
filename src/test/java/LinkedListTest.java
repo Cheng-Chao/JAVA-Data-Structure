@@ -23,6 +23,9 @@ public class LinkedListTest {
         System.out.println(linkedList.indexOf(2));
         System.out.println(linkedList.indexOf(3));
         System.out.println(linkedList.indexOf(4));
+        System.out.println(linkedList.get(0));
+        System.out.println(linkedList.get(-5));
+        System.out.println(linkedList.get(5));
         linkedList.printAll();
         linkedList.deleteFromEnd();
         linkedList.printAll();
