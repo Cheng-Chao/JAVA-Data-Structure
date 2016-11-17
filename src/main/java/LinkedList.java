@@ -4,21 +4,31 @@
  * @ LinkedList
  */
 class Node{
-    protected Node next;
+    public Node next;
     public int data;
 
-    public Node(int data) {
+    Node(){
+    }
+
+    Node(int data) {
         this.data = data;
     }
 
 }
+
+/**
+ * 单链表
+ */
 public class LinkedList {
     //头结点
     public Node first;
 
     //构造函数
-    public LinkedList(){
-        this.first = null;
+    LinkedList(){
+    }
+    LinkedList(int data){
+        this.first.data = data;
+        this.first.next = null;
     }
 
     /**
