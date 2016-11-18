@@ -1,7 +1,7 @@
 /**
  * @author  chengchao
- * @ 13/11/2016
- * @ LinkedList
+ * @time 2016/11/13
+ * 单链表
  */
 class Node{
     public Node next;
@@ -27,7 +27,7 @@ public class LinkedList {
     LinkedList(){
     }
     LinkedList(int data){
-        this.first.data = data;
+        this.first = new Node(data);
         this.first.next = null;
     }
 
@@ -77,16 +77,16 @@ public class LinkedList {
             System.out.println("Delete failed!!!The Linkedlist is empty");
         }
         else{
-            Node second = this.first.next;
+            Node secondNode = this.first.next;
             //第二个为空 直接删除头结点返回
-            if(second== null){
+            if(secondNode== null){
                 this.first = null;
-                return;
+            }
+            //第二个节点不为空，直接删除头结点
+            else{
+                this.first = secondNode;
             }
         }
-        //第二个节点不为空，直接删除头结点
-        Node second = this.first.next;
-        this.first = second;
     }
 
     /**
@@ -98,30 +98,30 @@ public class LinkedList {
             System.out.println("Delete failed!!!The Linkedlist is empty");
         }
         else {
-            Node second = this.first.next;
+            Node secondNode = this.first.next;
             //第二个为空 直接删除头结点返回
-            if(second == null){
+            if(secondNode == null){
                 this.first = null;
-                return;
             }
             //第三个为空 直接删除第二个节点返回
             else {
-                Node third = second.next;
-                if(third == null){
+                Node thirdNode = secondNode.next;
+                if(thirdNode == null){
                     this.first.next = null;
-                    return;
+                }
+                else{
+                    //前三个都不为空
+                    Node lastPrevious = this.first.next;//第二个节点
+                    Node previous= this.first.next.next;//第三个节点
+                    Node next = previous.next;//第四个节点
+                    while(next != null){
+                        lastPrevious = previous;
+                        previous = next;
+                        next = next.next;
+                    }
+                    lastPrevious.next = null;
                 }
             }
-            //前三个都不为空
-            Node lastPrevious = this.first.next;//第二个节点
-            Node previous= this.first.next.next;//第三个节点
-            Node next = previous.next;//第四个节点
-            while(next != null){
-                lastPrevious = previous;
-                previous = next;
-                next = next.next;
-            }
-            lastPrevious.next = null;
         }
     }
 
@@ -151,16 +151,16 @@ public class LinkedList {
     public int indexOf(int data){
         Node current = this.first;
         int index = 0;
-        boolean isFound = false;
+        boolean exist = false;
         while(current != null){
             if(current.data == data){
-                isFound = true;
+                exist = true;
                 break;
             }
             current = current.next;
             index += 1;
         }
-        if(isFound) return index;
+        if(exist) return index;
         else return  -1;
     }
 
