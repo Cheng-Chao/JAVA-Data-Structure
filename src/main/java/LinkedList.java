@@ -182,4 +182,17 @@ public class LinkedList {
         //返回null 遗留问题...
         return result == null? Integer.MIN_VALUE : result;
     }
+
+    /**
+     * 获取链表当前长度
+     */
+    public int length(){
+        int count = 0;
+        Node current = this.first;
+        while(current != null){
+            count += 1;
+            current = current.next;
+        }
+        return count;
+    }
 }

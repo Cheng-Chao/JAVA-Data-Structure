@@ -19,6 +19,7 @@ public class LinkedListTest {
         linkedList.addFromEnd(2);
         linkedList.addFromEnd(3);
         linkedList.printAll();
+        System.out.println("The LinkedList's length is " + linkedList.length());
         System.out.println(linkedList.indexOf(1));
         System.out.println(linkedList.indexOf(2));
         System.out.println(linkedList.indexOf(3));
@@ -29,11 +30,14 @@ public class LinkedListTest {
         linkedList.printAll();
         linkedList.deleteFromEnd();
         linkedList.printAll();
+        System.out.println("The LinkedList's length is " + linkedList.length());
+        linkedList.deleteFromEnd();
+        linkedList.printAll();
+        System.out.println("The LinkedList's length is " + linkedList.length());
         linkedList.deleteFromEnd();
         linkedList.printAll();
         linkedList.deleteFromEnd();
-        linkedList.printAll();
-        linkedList.deleteFromEnd();
+        System.out.println("The LinkedList's length is " + linkedList.length());
         linkedList.addFromEnd(7);
         linkedList.printAll();
         linkedList.addFromStart(6);

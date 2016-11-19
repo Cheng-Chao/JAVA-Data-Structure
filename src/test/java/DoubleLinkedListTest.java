@@ -27,6 +27,7 @@ public class DoubleLinkedListTest {
         doubleLinkedList.printAll();
         doubleLinkedList.addFromEnd(66);
         doubleLinkedList.printAll();
+        System.out.println("The DoubleLinkedList's length is " + doubleLinkedList.length());
         System.out.println(doubleLinkedList.indexOf(22));
         System.out.println(doubleLinkedList.indexOf(55));
         System.out.println(doubleLinkedList.indexOf(77));
@@ -41,7 +42,9 @@ public class DoubleLinkedListTest {
         System.out.println(doubleLinkedList.get(100));
         doubleLinkedList.deleteFromStart();
         doubleLinkedList.printAll();
+        System.out.println("The DoubleLinkedList's length is " + doubleLinkedList.length());
         doubleLinkedList.deleteFromEnd();
         doubleLinkedList.printAll();
+        System.out.println("The DoubleLinkedList's length is " + doubleLinkedList.length());
     }
 }
