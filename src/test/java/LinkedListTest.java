@@ -51,5 +51,12 @@ public class LinkedListTest {
         linkedList.printAll();
         linkedList.deleteFromStart();
         linkedList.printAll();
+        linkedList.addFromStart(22);
+        linkedList.addFromEnd(44);
+        linkedList.addFromEnd(66);
+        linkedList.addFromEnd(88);
+        linkedList.printAll();
+        linkedList.clear();
+        linkedList.printAll();
     }
 }

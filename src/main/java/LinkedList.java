@@ -195,4 +195,11 @@ public class LinkedList {
         }
         return count;
     }
+
+    /**
+     * 清空链表
+     */
+    public void clear(){
+        this.first = null;
+    }
 }

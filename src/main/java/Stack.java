@@ -65,7 +65,12 @@ public class Stack {
      * 输出所有栈数据
      */
     public void printAll(){
-        linkedList.printAll();
+        if(this.isEmpty()){
+            System.out.println("The Satck is Empty.");
+        }
+        else {
+            linkedList.printAll();
+        }
     }
 
     /**
@@ -73,5 +78,12 @@ public class Stack {
      */
     public int length(){
         return linkedList.length();
+    }
+
+    /**
+     * 清空栈
+     */
+    public void clear(){
+        linkedList.clear();
     }
 }

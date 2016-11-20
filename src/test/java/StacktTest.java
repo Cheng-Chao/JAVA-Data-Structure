@@ -31,5 +31,7 @@ public class StacktTest {
         stack.printAll();
         stack.popUp();
         stack.printAll();
+        stack.clear();
+        stack.printAll();
     }
 }

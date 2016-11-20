@@ -65,7 +65,12 @@ public class Queue {
      * 输出所有队数据
      */
     public void printAll(){
-        linkedList.printAll();
+        if(this.isEmpty()){
+            System.out.println("The Queue is empty.");
+        }
+        else {
+            linkedList.printAll();
+        }
     }
 
     /**
@@ -73,5 +78,12 @@ public class Queue {
      */
     public int length(){
         return linkedList.length();
+    }
+
+    /**
+     * 清空队列
+     */
+    public void clear(){
+        linkedList.clear();
     }
 }

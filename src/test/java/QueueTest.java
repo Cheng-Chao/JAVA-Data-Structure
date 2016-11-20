@@ -17,6 +17,7 @@ public class QueueTest {
 
     @Test
     public void test(){
+        System.out.println(queue.length());
         queue.dequeue();
         queue.add(1);
         queue.add(2);
@@ -28,6 +29,8 @@ public class QueueTest {
         //Assert.assertEquals(queue.length(),5);
         System.out.println(queue.length());
         System.out.println(queue.dequeue());
+        queue.printAll();
+        queue.clear();
         queue.printAll();
     }
 }
